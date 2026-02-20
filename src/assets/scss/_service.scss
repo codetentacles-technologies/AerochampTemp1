@@ -65,6 +65,10 @@
         margin-top: 20px;
         margin-bottom: 20px;
 
+        img,
+        &::before {
+            transition: all 0.4s ease-in-out;
+        }
     }
 
     .content {
@@ -104,8 +108,10 @@
         }
 
         .icon {
-            &::before {
-                filter: grayscale(100%) brightness(300%);
+
+            &::before,
+            img {
+                filter: brightness(0) invert(1);
             }
         }
 
@@ -139,8 +145,10 @@
         }
 
         .icon {
-            &::before {
-                filter: grayscale(100%) brightness(300%);
+
+            &::before,
+            img {
+                filter: brightness(0) invert(1);
             }
         }
 
@@ -185,8 +193,10 @@
             }
 
             .icon {
-                &::before {
-                    filter: grayscale(100%) brightness(300%);
+
+                &::before,
+                img {
+                    filter: brightness(0) invert(1);
                 }
             }
 
