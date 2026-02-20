@@ -5,7 +5,6 @@ import FaqHomeOne from '@/components/sections/faqHomeOne'
 import HeroOne from '@/components/sections/heros/heroOne'
 import MarqueOne from '@/components/sections/marques/marqueOne'
 import MarqueTwo from '@/components/sections/marques/marqueTwo'
-import NewsLetter from '@/components/sections/newsLetter'
 import PartnersOne from '@/components/sections/partners/partnersOne'
 import ProjectsOne from '@/components/sections/projects/projectsOne'
 import ServicesOne from '@/components/sections/services/servicesOne'
@@ -25,7 +24,6 @@ const Home = () => {
             <TeamesOne />
             <FaqHomeOne />
             <BlogsOne />
-            {/* <NewsLetter /> */}
         </div>
     )
 }
