@@ -34,7 +34,7 @@ const slidesData: SlideType[] = [
 
 const HeroOne = () => {
   return (
-    <section className="hero-section hero-1">
+    <section className="hero-section hero-1" style={{ backgroundColor: '#16171a' }}>
       <div className="array-button">
         <button className="array-prev"><i className="fa fa-arrow-left" /></button>
         <button className="array-next"><i className="fa fa-arrow-right" /></button>
@@ -43,7 +43,8 @@ const HeroOne = () => {
         loop={true}
         slidesPerView={1}
         effect="fade"
-        speed={3000}
+        fadeEffect={{ crossFade: true }}
+        speed={2000}
         autoplay={{
           delay: 7000,
           disableOnInteraction: false,
@@ -69,53 +70,69 @@ export default HeroOne
 
 const Card = ({ slide, isActive }: { slide: SlideType; isActive: boolean }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isActive ? 1 : 0 }}
-    >
-      <div className="hero-image bg-cover" style={{ backgroundImage: `url(${slide.image})` }} />
-      <div className="container">
+    <div className="hero-slide-container" style={{ position: 'relative', height: '100%', width: '100%', overflow: 'hidden', minHeight: '700px' }}>
+      <motion.div
+        className="hero-image bg-cover"
+        style={{
+          backgroundImage: `url(${slide.image})`,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: -1,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+        initial={{ scale: 1.15 }}
+        animate={{ scale: isActive ? 1 : 1.15 }}
+        transition={{
+          duration: 7,
+          ease: 'easeOut',
+        }}
+      />
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="row g-4">
           <div className="col-lg-8">
             <div className="hero-content">
               <motion.h6
-                initial={{ x: '100%', opacity: 0 }}
-                animate={{ x: isActive ? '0' : '100%', opacity: isActive ? 1 : 0 }}
+                initial={{ x: '50px', opacity: 0 }}
+                animate={{ x: isActive ? '0' : '50px', opacity: isActive ? 1 : 0 }}
                 transition={{
-                  duration: .5,
+                  duration: .8,
                   delay: 0.3,
-                  ease: 'linear',
+                  ease: 'easeOut',
                 }}
               >
                 {slide.title}
               </motion.h6>
               <motion.h1
-                initial={{ x: '100%', opacity: 0 }}
-                animate={{ x: isActive ? '0' : '100%', opacity: isActive ? 1 : 0 }}
+                initial={{ y: '30px', opacity: 0 }}
+                animate={{ y: isActive ? '0' : '30px', opacity: isActive ? 1 : 0 }}
                 transition={{
-                  duration: .5,
+                  duration: .8,
                   delay: 0.5,
-                  ease: 'linear',
+                  ease: 'easeOut',
                 }}
                 dangerouslySetInnerHTML={{ __html: slide.heading }}></motion.h1>
               <motion.p
-                initial={{ x: '100%', opacity: 0 }}
-                animate={{ x: isActive ? '0' : '100%', opacity: isActive ? 1 : 0 }}
+                initial={{ y: '20px', opacity: 0 }}
+                animate={{ y: isActive ? '0' : '20px', opacity: isActive ? 1 : 0 }}
                 transition={{
-                  duration: .5,
+                  duration: .8,
                   delay: 0.7,
-                  ease: 'linear',
+                  ease: 'easeOut',
                 }}
               >
                 {slide.description}
               </motion.p>
               <motion.div
-                initial={{ x: '100%', opacity: 0 }}
-                animate={{ x: isActive ? '0' : '100%', opacity: isActive ? 1 : 0 }}
+                initial={{ y: '20px', opacity: 0 }}
+                animate={{ y: isActive ? '0' : '20px', opacity: isActive ? 1 : 0 }}
                 transition={{
-                  duration: .5,
+                  duration: .8,
                   delay: 0.9,
-                  ease: 'linear',
+                  ease: 'easeOut',
                 }}
                 className="hero-button"
               >
@@ -127,6 +144,6 @@ const Card = ({ slide, isActive }: { slide: SlideType; isActive: boolean }) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }

@@ -263,19 +263,14 @@ const AerochampLoader = ({ onComplete }: AerochampLoaderProps) => {
                 </div>
 
                 {/* ── Company name at bottom right ── */}
-                <p
+                <div
                     style={{
                         alignSelf: 'flex-end',
-                        marginTop: 28,
-                        fontSize: 11,
-                        letterSpacing: '0.22em',
-                        textTransform: 'uppercase',
-                        color: '#ccccdd',
-                        fontWeight: 500,
                     }}
                 >
-                    AeroChamp Aviation Intl.
-                </p>
+                    <img src="/NewImgs/logo-1.png" alt="logo-img" style={{ maxWidth: '160px' }} />
+
+                </div>
             </div>
 
             {/* ═══════════════════════════════════════════

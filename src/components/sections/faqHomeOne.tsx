@@ -14,7 +14,7 @@ const FaqHomeOne = () => {
             </div> */}
             <div className="container">
                 <div className="faq-wrapper">
-                    <div className="row g-4">
+                    <div className="row g-4 align-items-center">
                         <div className="col-lg-6 wow slideUp" data-delay=".4">
                             <div className="faq-image">
                                 <img src="/NewImgs/interior.jpg" alt="faq-img" />

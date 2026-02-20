@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const ServiceCardTwo = ({ service }: { service: ServiceDataType }) => {
     return (
-        <div className="service-card-items">
+        <div className="service-card-items h-100">
             <div className="service-image">
                 <img src={service.image} alt="service-img" />
             </div>

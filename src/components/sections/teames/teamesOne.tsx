@@ -5,7 +5,7 @@ const TeamesOne = () => {
 
 
     return (
-        <section id="team" className="team-section section-padding pt-0 section-bg-2">
+        <section id="team" className="team-section section-padding pt-0">
             {/* <div className="line-shape">
                 <img src="/img/team/line-shape.png" alt="shape-img" />
             </div>

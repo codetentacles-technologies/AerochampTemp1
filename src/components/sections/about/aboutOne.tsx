@@ -9,15 +9,7 @@ const AboutOne = () => {
           <div className="row">
             <div className="col-lg-6">
               <div className="about-image-items">
-                <div className="counter-shape float-bob-y">
-                  <div className="icon">
-                    <img src="/img/about/icon-1.svg" alt="icon-img" />
-                  </div>
-                  <div className="content">
-                    <h3><span className="count">900</span>+</h3>
-                    <p>Customers</p>
-                  </div>
-                </div>
+
                 <div className="about-image-1 bg-cover wow slideLeft" data-delay=".3" style={{ backgroundImage: 'url("/NewImgs/shutterstock_32619811-1024x671.jpg")' }}>
                   <div className="about-image-2 wow slideUp" data-delay=".5">
                     <img src="/NewImgs/service-interiors.jpg" alt="about-img" />
