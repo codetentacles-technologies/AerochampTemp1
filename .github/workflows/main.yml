@@ -1,0 +1,40 @@
+name: Deploy Code On server
+
+on:
+  push:
+    branches:
+      - dev
+
+
+jobs:
+  build-and-deploy-live-dev-server:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: github.ref == 'refs/heads/dev'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22.x'
+
+      - name: Install dependencies
+        run: npm install --force
+
+      - name: Build the app
+        run: npm run build
+
+      - name: Copy files to dev server
+        uses: appleboy/scp-action@v0.1.5
+        with:
+          host: ${{ secrets.HOSTNAME }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          source: "./dist/*"
+          target: "/var/www/html/aerochamptemp1/"
+          strip_components: 1 
+
+
